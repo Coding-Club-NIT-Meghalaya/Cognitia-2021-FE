@@ -1,4 +1,4 @@
-var countDate = new Date('Oct 3,2021 00:00:00').getTime();
+var countDate = new Date('Oct 3,2021 9:45:00').getTime();
     function cognitiaDate(params) {
         var now = new Date().getTime();
         gap = countDate - now;
@@ -14,8 +14,8 @@ var countDate = new Date('Oct 3,2021 00:00:00').getTime();
 
         document.getElementById('days').innerText = d<10?("0"+d):d;
         document.getElementById('hours').innerText = h<10?("0"+h):h;
-        document.getElementById('minutes').innerText = m<10?("0"+d):m;
-        document.getElementById('seconds').innerText = s<10?("0"+d):s;
+        document.getElementById('minutes').innerText = m<10?("0"+m):m;
+        document.getElementById('seconds').innerText = s<10?("0"+s):s;
     }
         setInterval(() => {
             cognitiaDate()
