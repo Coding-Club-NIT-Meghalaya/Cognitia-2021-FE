@@ -307,7 +307,7 @@ p {
 }
 .logo img {
 	display: block;
-	height: 30px;
+	height: 70px;
 	width: auto;
 }
 a.ticket-link .pulse{
@@ -333,6 +333,10 @@ a.ticket-link:active .pulse{
 	z-index: 3002;
 	height: 36px;
 	line-height: 36px;
+}
+
+#svg-ticket{
+	margin-top: 15px;
 }
 .ticket p{
 	line-height: 36px;
