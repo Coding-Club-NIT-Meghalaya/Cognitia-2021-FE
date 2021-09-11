@@ -1719,11 +1719,11 @@ ul.countdown li p {
   background: linear-gradient(45deg, #0947db, #07d89d);
   color: inherit;
   border: none;
-  padding: 5px;
+  padding: 5px 10px;
   font: inherit;
   cursor: pointer;
   outline: inherit;
   border-radius: 3px;
-  margin-top: 4px;
+  margin-top: 10px;
   margin-bottom: 4rem;
 }

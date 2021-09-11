@@ -108,15 +108,23 @@
 })(jQuery);
 
 // Fetch and update schedule data
-function myfun(data) {
-  let eventContainer = document.querySelector("#event-container");
-  let eventDay1 = $("#event-Day1");
-  let eventDay2 = $("#event-Day2");
+function myfun(data, membersData) {
+  let eventDay2 = document.querySelector("#event-Day2");
 
   for (let i = 0; i < data.length; i++) {
-    // let member = membersData.filter((memberObj) => memberObj.id === data[i].id);
-    // let coOrdinator = [...member.filter((obj) => obj.type == "Coordinator").map((obj) => obj.member_name)];
-    // let coCoOrdinator = [...member.filter((obj) => obj.type == "Cocordinator").map((obj) => obj.member_name)];
+    let member = membersData.filter((memberObj) => memberObj.id === data[i].id);
+    let coOrdinator = [
+      ...member
+        .filter((obj) => obj.type == "Coordinator")
+        .map((obj) => obj.member_name),
+    ];
+    let coCoOrdinator = [
+      ...member
+        .filter((obj) => obj.type == "Cocordinator")
+        .map((obj) => obj.member_name),
+    ];
+
+    let eventDate = data[i].year.start_date;
 
     let time = (date) => {
       if (+date.slice(0, 2) > 12)
@@ -124,9 +132,8 @@ function myfun(data) {
       return `${date} am`;
     };
 
-    let start_time = time(data[i].start_date.slice(11, 16));
+    let start_time = time(eventDate.slice(11, 16));
     let end_time = time(data[i].end_date.slice(11, 16));
-    let coOrdinator = ["Govind"];
 
     const eventScheduleHTML = `
       <div class="col-md-3" id="event-schedule">
@@ -141,7 +148,7 @@ function myfun(data) {
     const eventDetailsHTML = `
       <div class="col-md-9 mt-4 mt-md-0" id="event-details">
         <h5>${data[i].name}</h5>
-        <p><em>Hosted by Coding Club</em></p>
+        <p><em>Hosted by ${data[i].type} Club</em></p>
         <div class="section pl-5">
           <h6 class="mt-5 mb-3">${data[i].description}</h6>
           <p><strong>Cordinators</strong> - ${coOrdinator}</p>
@@ -153,28 +160,25 @@ function myfun(data) {
       </div>
     `;
 
-    if (data[i].start_date.slice(0, 11) == "2021-10-03"){
-      eventDay1.after(eventScheduleHTML);
-      eventDay1.after(eventDetailsHTML);
-      console.log("MY NAME IS KHAN");
+    if (eventDate.slice(0, 10) == "2021-10-03") {
+      eventDay2.insertAdjacentHTML("beforebegin", eventScheduleHTML);
+      eventDay2.insertAdjacentHTML("beforebegin", eventDetailsHTML);
     }
-    else if (data[i].start_date.slice(0, 11) == "2021-10-04"){
-      eventDay2.after(eventScheduleHTML);
-      eventDay2.after(eventDetailsHTML);
+    if (eventDate.slice(0, 10) == "2021-10-04") {
+      eventDay2.insertAdjacentHTML("afterend", eventDetailsHTML);
+      eventDay2.insertAdjacentHTML("afterend", eventScheduleHTML);
     }
-
-    // eventContainer.innerHTML += eventDetailsHTML;
   }
 }
-fetch("https://cognitia2021.herokuapp.com/api/events/")
-  .then((response) => response.json())
-  .then((data) => myfun(data));
-
-// DUAL API CALL
 // fetch("https://cognitia2021.herokuapp.com/api/events/")
 //   .then((response) => response.json())
-//   .then((data) => {
-//     fetch("https://cognitia2021.herokuapp.com/api/teammembers/")
-//       .then((response) => response.json())
-//       .then((membersData) => myfun(data, membersData));
-//   });
+//   .then((data) => myfun(data));
+
+// DUAL API CALL
+fetch("https://cognitia2021.herokuapp.com/api/events/")
+  .then((response) => response.json())
+  .then((data) => {
+    fetch("https://cognitia2021.herokuapp.com/api/teammembers/")
+      .then((response) => response.json())
+      .then((membersData) => myfun(data, membersData));
+  });
