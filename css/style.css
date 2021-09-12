@@ -319,7 +319,7 @@ p {
 }
 .logo img {
 	display: block;
-	height: 70px;
+	height: 100px;
 	width: auto;
 }
 a.ticket-link .pulse {
@@ -1207,7 +1207,6 @@ ul.countdown li p {
   padding: 10px;
   border: 4px solid rgba(255, 255, 255, 0.2);
   border-radius: 3px;
-  margin-right: 10px;
 }
 
 /* #Press
@@ -1542,7 +1541,7 @@ ul.countdown li p {
 }
 .footer img {
   display: block;
-  height: 30px;
+  height: 100px;
   width: auto;
   margin: 0 auto;
   text-align: center;
