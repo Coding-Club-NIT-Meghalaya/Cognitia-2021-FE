@@ -1726,3 +1726,9 @@ ul.countdown li p {
   margin-top: 10px;
   margin-bottom: 4rem;
 }
+
+.prize_money{
+    font-size: 15px;
+    font-weight: 400;
+    padding-left: 10px;
+}
