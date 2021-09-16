@@ -625,7 +625,7 @@ main {
 }
 .content__close {
   position: absolute;
-  top: 70px;
+  top: 110px;
   left: 40px;
   overflow: hidden;
   background-color: transparent;
