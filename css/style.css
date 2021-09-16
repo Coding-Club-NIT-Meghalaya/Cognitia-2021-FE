@@ -318,9 +318,9 @@ p {
   z-index: 3002;
 }
 .logo img {
-	display: block;
-	height: 100px;
-	width: auto;
+  display: block;
+  height: 100px;
+  width: auto;
 }
 a.ticket-link .pulse {
   -webkit-transition: all 300ms linear;
@@ -625,7 +625,7 @@ main {
 }
 .content__close {
   position: absolute;
-  top: 70px;
+  top: 110px;
   left: 40px;
   overflow: hidden;
   background-color: transparent;
@@ -1727,8 +1727,8 @@ ul.countdown li p {
   margin-bottom: 4rem;
 }
 
-.prize_money{
-    font-size: 15px;
-    font-weight: 400;
-    padding-left: 10px;
+.prize_money {
+  font-size: 15px;
+  font-weight: 400;
+  padding-left: 10px;
 }
