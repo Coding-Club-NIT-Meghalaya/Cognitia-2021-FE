@@ -6,7 +6,6 @@ function timelineFun(data, membersData) {
     let member = membersData.filter(
       (memberObj) => memberObj.event_name === data[i].id
     );
-    console.log(member);
     let coOrdinator = [
       ...member
         .filter((obj) => obj.type == "Coordinator")
