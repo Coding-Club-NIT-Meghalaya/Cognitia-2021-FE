@@ -112,7 +112,10 @@ function myfun(data, membersData) {
   let eventDay2 = document.querySelector("#event-Day2");
 
   for (let i = 0; i < data.length; i++) {
-    let member = membersData.filter((memberObj) => memberObj.id === data[i].id);
+    let member = membersData.filter(
+      (memberObj) => memberObj.event_name === data[i].id
+    );
+    console.log(member);
     let coOrdinator = [
       ...member
         .filter((obj) => obj.type == "Coordinator")
@@ -120,7 +123,7 @@ function myfun(data, membersData) {
     ];
     let coCoOrdinator = [
       ...member
-        .filter((obj) => obj.type == "Cocordinator")
+        .filter((obj) => obj.type == "Co-Coordinator")
         .map((obj) => obj.member_name),
     ];
 
@@ -152,7 +155,7 @@ function myfun(data, membersData) {
         <div class="section pl-5">
           <h6 class="mt-5 mb-3">${data[i].description}</h6>
           <p><strong>Cordinators</strong> - ${coOrdinator}</p>
-          <p><strong>Co-Cordinators</strong> - Abhishek, Meenakshi</p>
+          <p><strong>Co-Cordinators</strong> - ${coCoOrdinator}</p>
           <a href="${data[i].doc_link}" class="btn-pass-4"><button class="View_details_button">
             Get More Info
           </button> </a>
