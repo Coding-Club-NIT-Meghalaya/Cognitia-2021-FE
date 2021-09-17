@@ -1602,7 +1602,7 @@ ul.countdown li p {
   }
   ul.countdown {
     max-width: 330px;
-    padding: 15px;
+    padding: 5px;
     padding-top: 20px;
     padding-bottom: 0;
   }
@@ -1623,8 +1623,8 @@ ul.countdown li p {
     margin-top: 15px;
   }
   .content__close {
-    top: 20px;
-    left: 50%;
+    top: 10px;
+    left: 10%;
     margin-left: -18px;
     width: 36px;
     height: 36px;
@@ -1680,6 +1680,9 @@ ul.countdown li p {
   }
   .menu__item--showDeco:hover::before {
     transform: scale3d(1, -1.4, 1);
+  }
+  .logo {
+    left: 7%;
   }
 }
 
