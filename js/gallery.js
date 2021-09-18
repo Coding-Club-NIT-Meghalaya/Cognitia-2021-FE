@@ -120,6 +120,11 @@ function getTeam(teamData) {
 showTeam();
 
 const createEventTeamSection = (eventName, imagesOfCordinators) => {
+  imagesOfCordinators = imagesOfCordinators.sort(function(a,b) {
+    var x = a.type.toLowerCase();
+    var y = b.type.toLowerCase();
+    return x < y ? 1 : x > y ? -1 : 0;
+});
   let EventTeamCardLayout = `<div class="col-lg-3"> <h6>${eventName}</h6> </div>
 <div class="col-lg-9 mt-4 mt-lg-0">
     <div class="sponsors">`;
