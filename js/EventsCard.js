@@ -87,4 +87,5 @@ fetch("https://cognitia2021.herokuapp.com/api/events/")
         (e) => e.type.substring(0, 12) === "Departmental" || e.type === "Gaming"
       )
     )
-  );
+);
+  
