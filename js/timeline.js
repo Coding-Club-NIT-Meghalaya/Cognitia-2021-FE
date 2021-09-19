@@ -17,7 +17,7 @@ function timelineFun(data, membersData) {
         .map((obj) => obj.member_name),
     ];
 
-    let eventDate = data[i].year.start_date;
+    let eventDate = data[i].start_date;
 
     let time = (date) => {
       if (+date.slice(0, 2) > 12)
