@@ -16,7 +16,7 @@ function timelineFun(data, membersData) {
     eventDay6,
   ];
 
-  for (let i = 0; i < data.length; i++) {
+  for (let i = data.length-1; i >=0; i--) {
     let member = membersData.filter(
       (memberObj) => memberObj.event_name === data[i].id
     );
@@ -56,7 +56,7 @@ function timelineFun(data, membersData) {
     const eventDetailsHTML = `
       <div class="col-md-9 mt-4 mt-md-0" id="event-details">
         <h5>${data[i].name}</h5>
-        <p><em>Hosted by ${data[i].type} Club</em></p>
+        <p><em>Hosted by ${data[i].type} ${data[i].type === 'Coding' || data[i].type === 'Robotics' ? 'Club' : 'Team' }</em></p>
         <div class="section pl-5">
         <h6 class="mt-5 mb-3">${data[i].description}</h6>
           <p><strong>Cordinators</strong> - ${coOrdinator}</p>

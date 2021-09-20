@@ -215,7 +215,7 @@ p {
   padding-bottom: 80px;
 }
 .padding-top {
-  padding-top: 80px;
+  padding-top: 20px;
 }
 .padding-bottom {
   padding-bottom: 80px;
@@ -228,7 +228,7 @@ p {
   padding-top: 110px;
 }
 .padding-bottom-big {
-  padding-bottom: 110px;
+  padding-bottom: 30px;
 }
 .padding-top-bottom-small {
   padding-top: 50px;
@@ -1207,6 +1207,8 @@ ul.countdown li p {
   padding: 10px;
   border: 4px solid rgba(255, 255, 255, 0.2);
   border-radius: 3px;
+  max-height: 215px;
+  margin: 5px;
 }
 
 /* #Press
@@ -1231,8 +1233,8 @@ ul.countdown li p {
   width: 100%;
   display: block;
   height: auto;
-  -webkit-filter: grayscale(70%);
-  filter: grayscale(70%);
+  /* -webkit-filter: grayscale(70%); */
+  /* filter: grayscale(70%); */
   transition: all 200ms linear;
 }
 .blog-wrap img:hover {
@@ -1254,7 +1256,7 @@ ul.countdown li p {
   display: block;
   color: #f8ae2c;
   font-family: FontAwesome;
-  font-size: 24px;
+  font-size: 29px;
   text-align: left;
   transition: all 200ms linear;
 }

@@ -10,7 +10,7 @@ function myfun(data) {
       data[i].name +
       '</h5><p class="px-4 mb-3 ">Total prize:<small class="prize_money"><i class="fa fa-rupee"></i> ';
     roboticsClubEventCardLayout +=
-      data[i].total_prize.slice(3) +
+      data[i].total_prize +
       '</small></p><p class="px-4 text-justify">';
     roboticsClubEventCardLayout +=
       data[i].description.substring(0, 100) +
@@ -35,14 +35,16 @@ function myfun1(data) {
       '<div class="col-md-4 mt-4"><div class="blog-wrap pb-4"><a href="#"><img src="';
     codingEventCardLayout +=
       data[i].image + '" alt=""></a><h5 class="px-4 pt-3 text-center">';
+    // if()
     codingEventCardLayout +=
-      data[i].name +
-      '</h5><p class="px-4 mb-3 ">Total prize:<small class="prize_money"><i class="fa fa-rupee"></i> ';
+      data[i].name + '</h5>'
+    if (data[i].name !== 'Game Development Workshop') {
+      codingEventCardLayout +=
+     '<p class="px-4 mb-3 ">Total prize:<small class="prize_money"><i class="fa fa-rupee"></i>'  +data[i].total_prize +
+      '</small></p>';
+    }
     codingEventCardLayout +=
-      data[i].total_prize.slice(3) +
-      '</small></p><p class="px-4 text-justify">';
-    codingEventCardLayout +=
-      data[i].description.substring(0, 100) +
+    '<p class="px-4 text-justify">' + data[i].description.substring(0, 100) +
       '</p><p class="px-4 py-2">Event Duration: <small class="px-2 pt-3 h6">';
     codingEventCardLayout +=
       data[i].duration.slice(0, 6) + '</small></p><a href="';
@@ -67,7 +69,7 @@ function myfun2(data) {
       data[i].name +
       '</h5><p class="px-4 mb-3 ">Total prize:<small class="prize_money"><i class="fa fa-rupee"></i> ';
     myhtml +=
-      data[i].total_prize.slice(3) +
+      data[i].total_prize +
       '</small></p><p class="px-4 text-justify">';
     myhtml +=
       data[i].description.substring(0, 100) +
