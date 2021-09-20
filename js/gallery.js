@@ -39,6 +39,10 @@ function getTeam(teamData) {
   // Core Team
   
   teamHtml += createEventTeamSection(
+    "Publicity Team",
+    teamData.filter((e) => e.type.substring(0, 9) == "Publicity")
+  );
+  teamHtml += createEventTeamSection(
     "TechStrom",
     teamData.filter((e) => e.event_name == 10)
   );
@@ -55,8 +59,8 @@ function getTeam(teamData) {
     teamData.filter((e) => e.event_name == 16)
   );
   teamHtml += createEventTeamSection(
-    "TreasureHunt",
-    teamData.filter((e) => e.event_name == 11)
+    "Design Cave",
+    teamData.filter((e) => e.event_name == 7)
   );
   teamHtml += createEventTeamSection(
     "Prasan Baan",
@@ -75,25 +79,21 @@ function getTeam(teamData) {
     teamData.filter((e) => e.event_name == 8)
   );
   teamHtml += createEventTeamSection(
-    "Design Cave",
-    teamData.filter((e) => e.event_name == 7)
+    "TreasureHunt",
+    teamData.filter((e) => e.event_name == 11)
   );
   teamHtml += createEventTeamSection(
     "Designing Team",
     teamData.filter((e) => e.type.substring(0, 9) == "Designing")
   );
   teamHtml += createEventTeamSection(
-    "Publicity Team",
-    teamData.filter((e) => e.type.substring(0, 9) == "Publicity")
-  );
-  teamHtml += createEventTeamSection(
     "Sponsorship & Marketing Team",
     teamData.filter((e) => e.type.substring(0, 7) == "Sponsor")
   );
-  teamHtml += createEventTeamSection(
-    "Web Development Team",
-    teamData.filter((e) => e.type.substring(0, 4) == "Web")
-  );
+  // teamHtml += createEventTeamSection(
+  //   "Web Development Team",
+  //   teamData.filter((e) => e.type.substring(0, 4) == "Web")
+  // );
   teamHtml += createEventTeamSection(
     "CSE Departmental",
     teamData.filter((e) => e.event_name==29)
@@ -125,7 +125,7 @@ const createEventTeamSection = (eventName, imagesOfCordinators) => {
     var y = b.type.toLowerCase();
     return x < y ? 1 : x > y ? -1 : 0;
 });
-  let EventTeamCardLayout = `<div class="col-lg-3"> <h6>${eventName}</h6> </div>
+  let EventTeamCardLayout = `<div class="col-lg-3 team_title"> <h6>${eventName}</h6> </div>
 <div class="col-lg-9 mt-4 mt-lg-0">
     <div class="sponsors">`;
   for (i = 0; i < imagesOfCordinators.length; i++) {

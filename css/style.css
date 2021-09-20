@@ -1734,3 +1734,14 @@ ul.countdown li p {
   font-weight: 400;
   padding-left: 10px;
 }
+
+.team_top{
+  margin: 0px !important;
+}
+
+.team_title{
+      display: flex;
+  align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
