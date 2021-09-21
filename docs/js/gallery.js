@@ -43,7 +43,7 @@ function getTeam(teamData) {
     teamData.filter((e) => e.type.substring(0, 9) == "Publicity")
   );
   teamHtml += createEventTeamSection(
-    "TechStrom",
+    "TechStorm",
     teamData.filter((e) => e.event_name == 10)
   );
   teamHtml += createEventTeamSection(
