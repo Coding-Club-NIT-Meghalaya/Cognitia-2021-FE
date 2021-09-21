@@ -1604,7 +1604,7 @@ ul.countdown li p {
   }
   ul.countdown {
     max-width: 330px;
-    padding: 15px;
+    padding: 5px;
     padding-top: 20px;
     padding-bottom: 0;
   }
@@ -1625,8 +1625,8 @@ ul.countdown li p {
     margin-top: 15px;
   }
   .content__close {
-    top: 20px;
-    left: 50%;
+    top: 10px;
+    left: 10%;
     margin-left: -18px;
     width: 36px;
     height: 36px;
@@ -1735,13 +1735,13 @@ ul.countdown li p {
   padding-left: 10px;
 }
 
-.team_top{
+.team_top {
   margin: 0px !important;
 }
 
-.team_title{
-      display: flex;
+.team_title {
+  display: flex;
   align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+  justify-content: center;
+  margin-top: 20px;
 }
