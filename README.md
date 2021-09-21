@@ -42,7 +42,7 @@ Create your Feature Branch
 Commit your Changes
 
 ```bash
-git commit -m "Add some Amazing Feature"
+git commit -m "Add some AmazingFeature"
 ```
 
 Push to the Branch
