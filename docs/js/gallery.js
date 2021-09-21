@@ -112,7 +112,7 @@ function getTeam(teamData) {
   );
     teamHtml += createEventTeamSection(
     "Web Development Team",
-    teamData.filter((e) => e.type.substring(0, 4) == "Web")
+    teamData.filter((e) => e.type.substring(0, 3) == "Web")
   );
   eventImg.innerHTML += teamHtml + "</div>";
 }
