@@ -43,7 +43,7 @@ function getTeam(teamData) {
     teamData.filter((e) => e.type.substring(0, 9) == "Publicity")
   );
   teamHtml += createEventTeamSection(
-    "TechStrom",
+    "TechStorm",
     teamData.filter((e) => e.event_name == 10)
   );
   teamHtml += createEventTeamSection(
@@ -90,10 +90,6 @@ function getTeam(teamData) {
     "Sponsorship & Marketing Team",
     teamData.filter((e) => e.type.substring(0, 7) == "Sponsor")
   );
-  // teamHtml += createEventTeamSection(
-  //   "Web Development Team",
-  //   teamData.filter((e) => e.type.substring(0, 4) == "Web")
-  // );
   teamHtml += createEventTeamSection(
     "CSE Departmental",
     teamData.filter((e) => e.event_name==29)
@@ -113,6 +109,10 @@ function getTeam(teamData) {
   teamHtml += createEventTeamSection(
     "CE Departmental",
     teamData.filter((e) => e.event_name==3)
+  );
+    teamHtml += createEventTeamSection(
+    "Web Development Team",
+    teamData.filter((e) => e.type.substring(0, 3) == "Web")
   );
   eventImg.innerHTML += teamHtml + "</div>";
 }
