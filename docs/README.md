@@ -55,7 +55,7 @@ Open a Pull Request
 
 ## Contributors
 
-- [GovindCodes](https://github.com/GovindCodes) (Dev Co-ordinator)
-- [utkarshkanswal](https://github.com/utkarshkanswal) (Dev Co-ordinator)
+- [GovindCodes](https://github.com/GovindCodes) (Dev. Co-ordinator)
+- [utkarshkanswal](https://github.com/utkarshkanswal) (Dev. Co-ordinator)
 - [Anubhavdxt](https://www.github.com/Anubhavdxt)
 - [Pranav108](https://github.com/Pranav108)
