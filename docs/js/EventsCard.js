@@ -14,7 +14,7 @@ function myfun(data) {
       '</small></p><p class="px-4 text-justify">';
     roboticsClubEventCardLayout +=
       data[i].description.substring(0, 100) +
-      '</p><p class="px-4 py-2">Event Duration: <small class="px-2 pt-3 h6">';
+      '...</p><p class="px-4 py-2">Event Duration: <small class="px-2 pt-3 h6">';
     roboticsClubEventCardLayout +=
       data[i].duration.slice(0, 6) + '</small></p><a href="';
     roboticsClubEventCardLayout +=
@@ -45,7 +45,7 @@ function myfun1(data) {
     }
     codingEventCardLayout +=
     '<p class="px-4 text-justify">' + data[i].description.substring(0, 100) +
-      '</p><p class="px-4 py-2">Event Duration: <small class="px-2 pt-3 h6">';
+      '...</p><p class="px-4 py-2">Event Duration: <small class="px-2 pt-3 h6">';
     codingEventCardLayout +=
       data[i].duration.slice(0, 6) + '</small></p><a href="';
     codingEventCardLayout +=
@@ -73,7 +73,7 @@ function myfun2(data) {
       '</small></p><p class="px-4 text-justify">';
     myhtml +=
       data[i].description.substring(0, 100) +
-      '</p><p class="px-4 py-2">Event Duration: <small class="px-2 pt-3 h6">';
+      '...</p><p class="px-4 py-2">Event Duration: <small class="px-2 pt-3 h6">';
     myhtml += data[i].duration.slice(0, 6) + '</small></p><a href="';
     myhtml +=
       data[i].doc_link +
