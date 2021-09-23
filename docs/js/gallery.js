@@ -37,7 +37,7 @@ function getTeam(teamData) {
   let teamHtml = '<div class="row">';
   // Secratary
   // Core Team
-  
+
   teamHtml += createEventTeamSection(
     "Publicity Team",
     teamData.filter((e) => e.type.substring(0, 9) == "Publicity")
@@ -61,10 +61,6 @@ function getTeam(teamData) {
   teamHtml += createEventTeamSection(
     "Design Cave",
     teamData.filter((e) => e.event_name == 7)
-  );
-  teamHtml += createEventTeamSection(
-    "Prasan Baan",
-    teamData.filter((e) => e.event_name == 6)
   );
   teamHtml += createEventTeamSection(
     "Cognithon",
@@ -92,23 +88,23 @@ function getTeam(teamData) {
   );
   teamHtml += createEventTeamSection(
     "CSE Departmental",
-    teamData.filter((e) => e.event_name==29)
+    teamData.filter((e) => e.event_name == 29)
   );
   teamHtml += createEventTeamSection(
     "ECE Departmental",
-    teamData.filter((e) => e.event_name==26)
+    teamData.filter((e) => e.event_name == 26)
   );
   teamHtml += createEventTeamSection(
     "EEE Departmental",
-    teamData.filter((e) => e.event_name==25)
+    teamData.filter((e) => e.event_name == 25)
   );
   teamHtml += createEventTeamSection(
     "ME Departmental",
-    teamData.filter((e) => e.event_name==27)
+    teamData.filter((e) => e.event_name == 27)
   );
   teamHtml += createEventTeamSection(
     "CE Departmental",
-    teamData.filter((e) => e.event_name==3)
+    teamData.filter((e) => e.event_name == 3)
   );
     teamHtml += createEventTeamSection(
     "Web Development Team",
@@ -120,11 +116,11 @@ function getTeam(teamData) {
 showTeam();
 
 const createEventTeamSection = (eventName, imagesOfCordinators) => {
-  imagesOfCordinators = imagesOfCordinators.sort(function(a,b) {
+  imagesOfCordinators = imagesOfCordinators.sort(function (a, b) {
     var x = a.type.toLowerCase();
     var y = b.type.toLowerCase();
     return x < y ? 1 : x > y ? -1 : 0;
-});
+  });
   let EventTeamCardLayout = `<div class="col-lg-3 team_title"> <h6>${eventName}</h6> </div>
 <div class="col-lg-9 mt-4 mt-lg-0">
     <div class="sponsors">`;
