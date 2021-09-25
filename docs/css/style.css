@@ -1745,3 +1745,10 @@ ul.countdown li p {
   justify-content: center;
   margin-top: 20px;
 }
+
+.bi {
+  font-size: 1.1rem;
+}
+.social-link {
+  margin: 10px;
+}
