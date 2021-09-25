@@ -312,7 +312,7 @@ p {
 
 .logo {
   position: absolute;
-  top: 22px;
+  top: 5px;
   left: 40px;
   display: block;
   z-index: 3002;
@@ -324,7 +324,7 @@ p {
 }
 .NITMlogo {
   position: absolute;
-  top: 35px;
+  top: 15px;
   left: 47%;
   display: block;
   z-index: 3002;
@@ -335,9 +335,7 @@ p {
   width: auto;
 }
 
-@media (max-width: 750px){
-
-  
+@media (max-width: 750px) {
   .NITMlogo {
     display: none;
   }
@@ -518,7 +516,7 @@ a.ticket-link:active .pulse {
 }
 
 body {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   color: #fff;
   color: var(--color-text);
   background-color: #fff;
@@ -1766,6 +1764,8 @@ ul.countdown li p {
   justify-content: center;
   margin-top: 20px;
 }
+
+/* CUSTOM STYLES */
 
 .bi {
   font-size: 1.1rem;
