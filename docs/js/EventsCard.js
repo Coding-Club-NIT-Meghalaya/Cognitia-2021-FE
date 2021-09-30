@@ -23,7 +23,7 @@ function myfun(data) {
         row.innerHTML += roboticsClubEventCardLayout;
     }
 }
-fetch("https://cognitia2021.herokuapp.com/api/events/")
+fetch("https://cognitia21.herokuapp.com/api/events/")
     .then((response) => response.json())
     .then((data) => myfun(data.filter((e) => e.type === "Robotics")));
 
@@ -54,7 +54,7 @@ function myfun1(data) {
         row1.innerHTML += codingEventCardLayout;
     }
 }
-fetch("https://cognitia2021.herokuapp.com/api/events/")
+fetch("https://cognitia21.herokuapp.com/api/events/")
     .then((response) => response.json())
     .then((data) => myfun1(data.filter((e) => e.type === "Coding")));
 
@@ -86,7 +86,7 @@ function myfun2(data) {
         row2.innerHTML += myhtml;
     }
 }
-fetch("https://cognitia2021.herokuapp.com/api/events/")
+fetch("https://cognitia21.herokuapp.com/api/events/")
     .then((response) => response.json())
     .then((data) =>
         myfun2(

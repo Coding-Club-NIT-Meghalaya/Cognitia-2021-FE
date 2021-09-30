@@ -1,49 +1,49 @@
 // Fetch and update schedule data
 function timelineFun(data, membersData) {
-  let eventDay1 = document.querySelector("#event-Day1");
-  let eventDay2 = document.querySelector("#event-Day2");
-  let eventDay3 = document.querySelector("#event-Day3");
-  let eventDay4 = document.querySelector("#event-Day4");
-  let eventDay5 = document.querySelector("#event-Day5");
-  let eventDay6 = document.querySelector("#event-Day6");
+    let eventDay1 = document.querySelector("#event-Day1");
+    let eventDay2 = document.querySelector("#event-Day2");
+    let eventDay3 = document.querySelector("#event-Day3");
+    let eventDay4 = document.querySelector("#event-Day4");
+    let eventDay5 = document.querySelector("#event-Day5");
+    let eventDay6 = document.querySelector("#event-Day6");
 
-  const eventDays = [
-    eventDay1,
-    eventDay2,
-    eventDay3,
-    eventDay4,
-    eventDay5,
-    eventDay6,
-  ];
-
-  for (let i = data.length - 1; i >= 0; i--) {
-    let member = membersData.filter(
-      (memberObj) => memberObj.event_name === data[i].id
-    );
-    let coOrdinator = [
-      ...member
-        .filter((obj) => obj.type == "Coordinator")
-        .map((obj) => obj.member_name),
-    ];
-    let coCoOrdinator = [
-      ...member
-        .filter((obj) => obj.type == "Co-Coordinator")
-        .map((obj) => obj.member_name),
+    const eventDays = [
+        eventDay1,
+        eventDay2,
+        eventDay3,
+        eventDay4,
+        eventDay5,
+        eventDay6,
     ];
 
-    let eventStartDate = data[i].start_date;
-    let eventEndDate = data[i].end_date;
+    for (let i = data.length - 1; i >= 0; i--) {
+        let member = membersData.filter(
+            (memberObj) => memberObj.event_name === data[i].id
+        );
+        let coOrdinator = [
+            ...member
+            .filter((obj) => obj.type == "Coordinator")
+            .map((obj) => obj.member_name),
+        ];
+        let coCoOrdinator = [
+            ...member
+            .filter((obj) => obj.type == "Co-Coordinator")
+            .map((obj) => obj.member_name),
+        ];
 
-    let time = (date) => {
-      if (+date.slice(0, 2) > 12)
-        return `${date.slice(0, 2) - 12}${date.slice(2, date.length)} pm`;
-      return `${date} am`;
-    };
+        let eventStartDate = data[i].start_date;
+        let eventEndDate = data[i].end_date;
 
-    let start_time = time(eventStartDate.slice(11, 16));
-    let end_time = time(eventEndDate.slice(11, 16));
+        let time = (date) => {
+            if (+date.slice(0, 2) > 12)
+                return `${date.slice(0, 2) - 12}${date.slice(2, date.length)} pm`;
+            return `${date} am`;
+        };
 
-    const eventScheduleHTML = `
+        let start_time = time(eventStartDate.slice(11, 16));
+        let end_time = time(eventEndDate.slice(11, 16));
+
+        const eventScheduleHTML = `
     <div class="col-md-3" id="event-schedule">
         <div class="schedule-time mb-4">
         <p>${start_time} - ${end_time}</p>
@@ -53,7 +53,7 @@ function timelineFun(data, membersData) {
         </div>
         </div>
         `;
-    const eventDetailsHTML = `
+        const eventDetailsHTML = `
       <div class="col-md-9 mt-4 mt-md-0" id="event-details">
         <h5>${data[i].name}</h5>
         <p><em>Hosted by ${data[i].type} ${
@@ -72,22 +72,22 @@ function timelineFun(data, membersData) {
         </div>
     `;
 
-    function insertFunction(event) {
-      event.insertAdjacentHTML("afterend", eventDetailsHTML);
-      event.insertAdjacentHTML("afterend", eventScheduleHTML);
-    }
+        function insertFunction(event) {
+            event.insertAdjacentHTML("afterend", eventDetailsHTML);
+            event.insertAdjacentHTML("afterend", eventScheduleHTML);
+        }
 
-    for (let i = 0; i < eventDays.length; i++) {
-      if (+eventStartDate.slice(9, 10) == i + 3) insertFunction(eventDays[i]);
+        for (let i = 0; i < eventDays.length; i++) {
+            if (+eventStartDate.slice(9, 10) == i + 3) insertFunction(eventDays[i]);
+        }
     }
-  }
 }
 
 // DUAL API CALL
-fetch("https://cognitia2021.herokuapp.com/api/events/")
-  .then((response) => response.json())
-  .then((data) => {
-    fetch("https://cognitia2021.herokuapp.com/api/teammembers/")
-      .then((response) => response.json())
-      .then((membersData) => timelineFun(data, membersData));
-  });
+fetch("https://cognitia21.herokuapp.com/api/events/")
+    .then((response) => response.json())
+    .then((data) => {
+        fetch("https://cognitia21.herokuapp.com/api/teammembers/")
+            .then((response) => response.json())
+            .then((membersData) => timelineFun(data, membersData));
+    });
