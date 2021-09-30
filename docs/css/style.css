@@ -902,6 +902,24 @@ main {
     margin: 12px 0;
 }
 
+.menu__item1 {
+    color: var(--color-menu);
+    line-height: 1.1;
+    /* text-transform: lowercase; */
+    letter-spacing: -0.025em;
+    text-indent: -0.025em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 0;
+    margin: 12px 0;
+}
+
 .menu__item:hover,
 .menu__item:focus {
     color: var(--color-menu-hover);
