@@ -187,12 +187,15 @@
   flex-direction: column;
   
 }
+
 .dir_img{
   margin-top:20px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 60%;
+  height: 400px;
+  width: 400px;
 }
 #dir_text{
   text-align: center;
@@ -214,6 +217,8 @@
   display: flex;
   flex-direction: column;
   margin: 10px;
+  justify-content: center;
+  align-items: center;
 }
 .dean_vp img{
   width: 240px;
