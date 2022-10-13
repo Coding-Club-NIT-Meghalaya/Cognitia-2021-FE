@@ -1,4 +1,5 @@
-// Robotics Event card started
+// Robotics Event Card
+
 function myfun(data) {
   var row = document.querySelector("#roboticsEventCards");
   for (let i = 0; i < data.length; i++) {
@@ -27,7 +28,8 @@ fetch("https://cognitia2021.herokuapp.com/api/events/")
   .then((response) => response.json())
   .then((data) => myfun(data.filter((e) => e.type === "Robotics")));
 
-// coding Event card Strated
+// Coding Event Card
+
 function myfun1(data) {
   var row1 = document.querySelector("#codingEventCards");
   for (let i = 0; i < data.length; i++) {

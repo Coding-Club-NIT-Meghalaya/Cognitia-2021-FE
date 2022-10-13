@@ -1,7 +1,7 @@
 (function ($) {
   "use strict";
 
-  //Preloader
+  // Preloader
 
   $(window).on("load", function (e) {
     // makes sure the whole site is loaded
@@ -9,7 +9,7 @@
     $(".loader").delay(500).fadeOut("slow"); // will fade out the white DIV that covers the website.
   });
 
-  /*! Popover */
+  // Popover
 
   $("a.ticket-link").webuiPopover({
     url: "#ticket-wrap",
@@ -82,18 +82,18 @@
   //     railpadding: { top: 20, right: 5, left: 0, bottom: 20 },
   //   });
 
-  //   //Countdown
+  //Countdown
 
   //   $(".countdown").downCount(
   //     {
   //       date: "07/27/2019 12:00:00",
   //     },
   //     function () {
-  //       // alert('WOOT WOOT, done!');
+  // alert('WOOT WOOT, done!');
   //     }
   //   );
 
-  //   //Animated Icons
+  //Animated Icons
 
   //   var options = {
   //     duration: 150,
