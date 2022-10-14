@@ -8,7 +8,6 @@
  * 5.Countdown
  * 6.Pages
  * 7.Media
- *
  */
 
 /* Page Loader */
@@ -895,21 +894,21 @@ main {
 }
 
 .menu__item1 {
-    color: var(--color-menu);
-    line-height: 1.1;
-    /* text-transform: lowercase; */
-    letter-spacing: -0.025em;
-    text-indent: -0.025em;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
-    padding: 0;
-    margin: 12px 0;
+  color: var(--color-menu);
+  line-height: 1.1;
+  /* text-transform: lowercase; */
+  letter-spacing: -0.025em;
+  text-indent: -0.025em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 0;
+  margin: 12px 0;
 }
 
 .menu__item:hover,
@@ -1226,7 +1225,7 @@ ul.countdown li p {
   background: linear-gradient(45deg, #00ac53, #23c3e0);
 }
 
-/* #Schedule & pass
+/* Schedule & pass
 ================================================== */
 
 .schedule-time {
