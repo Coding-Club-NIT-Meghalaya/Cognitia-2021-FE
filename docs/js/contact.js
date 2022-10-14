@@ -1,72 +1,75 @@
-(function($) { "use strict";
+(function ($) {
+  "use strict";
 
-	function Selector_Cache() {
-		var collection = {};
+  function Selector_Cache() {
+    var collection = {};
 
-		function get_from_cache( selector ) {
-			if ( undefined === collection[ selector ] ) {
-				collection[ selector ] = $( selector );
-			}
+    function get_from_cache(selector) {
+      if (undefined === collection[selector]) {
+        collection[selector] = $(selector);
+      }
 
-			return collection[ selector ];
-		}
+      return collection[selector];
+    }
 
-		return { get: get_from_cache };
-	}
+    return { get: get_from_cache };
+  }
 
-	var selectors = new Selector_Cache();
-	
-		jQuery(document).ready(function ($) { // wait until the document is ready
-			$('#send').on('click', function(){ // when the button is clicked the code executes
-				$('.error').fadeOut('slow'); // reset the error messages (hides them)
+  var selectors = new Selector_Cache();
 
-				var error = false; // we will set this true if the form isn't valid
+  jQuery(document).ready(function ($) {
+    // wait until the document is ready
+    $("#send").on("click", function () {
+      // when the button is clicked the code executes
+      $(".error").fadeOut("slow"); // reset the error messages (hides them)
 
-				var name = $('input#name').val(); // get the value of the input field
-				if(name == "" || name == " ") {
-					$('#err-name').fadeIn('slow'); // show the error message
-					error = true; // change the error state to true
-				}
+      var error = false; // we will set this true if the form isn't valid
 
-				var email_compare = /^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,6})$/; // Syntax to compare against input
-				var email = $('input#email').val(); // get the value of the input field
-				if (email == "" || email == " ") { // check if the field is empty
-					$('#err-email').fadeIn('slow'); // error - empty
-					error = true;
-				}else if (!email_compare.test(email)) { // if it's not empty check the format against our email_compare variable
-					$('#err-emailvld').fadeIn('slow'); // error - not right format
-					error = true;
-				}
+      var name = $("input#name").val(); // get the value of the input field
+      if (name == "" || name == " ") {
+        $("#err-name").fadeIn("slow"); // show the error message
+        error = true; // change the error state to true
+      }
 
-				if(error == true) {
-					$('#err-form').slideDown('slow');
-					return false;
-				}
+      var email_compare = /^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,6})$/; // Syntax to compare against input
+      var email = $("input#email").val(); // get the value of the input field
+      if (email == "" || email == " ") {
+        // check if the field is empty
+        $("#err-email").fadeIn("slow"); // error - empty
+        error = true;
+      } else if (!email_compare.test(email)) {
+        // if it's not empty check the format against our email_compare variable
+        $("#err-emailvld").fadeIn("slow"); // error - not right format
+        error = true;
+      }
 
-				var data_string = $('#ajax-form').serialize(); // Collect data from form
+      if (error == true) {
+        $("#err-form").slideDown("slow");
+        return false;
+      }
 
-				$.ajax({
-					type: "POST",
-					url: $('#ajax-form').attr('action'),
-					data: data_string,
-					timeout: 6000,
-					error: function(request,error) {
-						if (error == "timeout") {
-							$('#err-timedout').slideDown('slow');
-						}
-						else {
-							$('#err-state').slideDown('slow');
-							$("#err-state").html('An error occurred: ' + error + '');
-						}
-					},
-					success: function() {
-						$('#ajax-form').slideUp('slow');
-						$('#ajaxsuccess').slideDown('slow');
-					}
-				});
+      var data_string = $("#ajax-form").serialize(); // Collect data from form
 
-				return false; // stops user browser being directed to the php file
-			}); // end click function
-		});
-		
-  })(jQuery); 
+      $.ajax({
+        type: "POST",
+        url: $("#ajax-form").attr("action"),
+        data: data_string,
+        timeout: 6000,
+        error: function (request, error) {
+          if (error == "timeout") {
+            $("#err-timedout").slideDown("slow");
+          } else {
+            $("#err-state").slideDown("slow");
+            $("#err-state").html("An error occurred: " + error + "");
+          }
+        },
+        success: function () {
+          $("#ajax-form").slideUp("slow");
+          $("#ajaxsuccess").slideDown("slow");
+        },
+      });
+
+      return false; // stops user browser being directed to the php file
+    }); // end click function
+  });
+})(jQuery);
