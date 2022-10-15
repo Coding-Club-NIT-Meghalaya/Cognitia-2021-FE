@@ -1,4 +1,4 @@
-var countDate = new Date("Nov 3,2022 9:45:00").getTime();
+var countDate = new Date("Nov 5,2022 9:45:00").getTime();
 function cognitiaDate(params) {
   var now = new Date().getTime();
   gap = countDate - now;
