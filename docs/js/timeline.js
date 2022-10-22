@@ -3,18 +3,8 @@ function timelineFun(data, membersData) {
   let eventDay1 = document.querySelector("#event-Day1");
   let eventDay2 = document.querySelector("#event-Day2");
   let eventDay3 = document.querySelector("#event-Day3");
-  let eventDay4 = document.querySelector("#event-Day4");
-  let eventDay5 = document.querySelector("#event-Day5");
-  let eventDay6 = document.querySelector("#event-Day6");
 
-  const eventDays = [
-    eventDay1,
-    eventDay2,
-    eventDay3,
-    eventDay4,
-    eventDay5,
-    eventDay6,
-  ];
+  const eventDays = [eventDay1, eventDay2, eventDay3];
 
   for (let i = data.length - 1; i >= 0; i--) {
     let member = membersData.filter(
