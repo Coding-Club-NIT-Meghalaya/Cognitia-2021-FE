@@ -10,16 +10,6 @@ function timelineFun(data, membersData) {
     let member = membersData.filter(
       (memberObj) => memberObj.event_name === data[i].id
     );
-    let coOrdinator = [
-      ...member
-        .filter((obj) => obj.type == "Coordinator")
-        .map((obj) => obj.member_name),
-    ];
-    let coCoOrdinator = [
-      ...member
-        .filter((obj) => obj.type == "Co-Coordinator")
-        .map((obj) => obj.member_name),
-    ];
 
     let eventStartDate = data[i].start_date;
     let eventEndDate = data[i].end_date;
@@ -39,7 +29,7 @@ function timelineFun(data, membersData) {
         <p>${start_time} - ${end_time}</p>
         </div>
         <div class="schedule-place">
-        <p><a href="${data[i].meet_link}" target="_blank">Meet Joining Link</a></p>
+        <p><a href="${data[i].registration_link}" target="_blank">Register Here!</a></p>
         </div>
         </div>
         `;
@@ -51,8 +41,6 @@ function timelineFun(data, membersData) {
     }</em></p>
         <div class="section pl-5">
         <h6 class="mt-5 mb-3">${data[i].description}</h6>
-          <p><strong>Coordinators</strong> - ${coOrdinator}</p>
-          <p><strong>Co-Coordinators</strong> - ${coCoOrdinator}</p>
           <a href="${
             data[i].doc_link
           }" class="btn-pass-4"><button class="View_details_button">
@@ -68,7 +56,7 @@ function timelineFun(data, membersData) {
     }
 
     for (let i = 0; i < eventDays.length; i++) {
-      if (+eventStartDate.slice(9, 10) == i + 3) insertFunction(eventDays[i]);
+      if (+eventStartDate.slice(9, 10) == i + 5) insertFunction(eventDays[i]);
     }
   }
 }
