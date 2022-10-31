@@ -1258,6 +1258,7 @@ ul.countdown li p {
   width: 24px;
   height: 24px;
   z-index: 1;
+  filter: invert(1);
 }
 
 .schedule-place p {
@@ -1265,7 +1266,7 @@ ul.countdown li p {
 }
 
 .schedule-place p:before {
-  background-image: url("../img/pin.svg");
+  background-image: url("../img/registration.svg");
 }
 
 .pass-wrap {
