@@ -316,12 +316,6 @@ p {
   width: auto;
 }
 
-@media (max-width: 750px) {
-  .NITMlogo {
-    display: none;
-  }
-}
-
 a.ticket-link:hover .ticket svg *,
 a.ticket-link:focus .ticket svg *,
 a.ticket-link:active .ticket svg * {
