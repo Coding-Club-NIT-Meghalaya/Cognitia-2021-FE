@@ -331,7 +331,7 @@ a.ticket-link:active .pulse {
 .ticket {
   position: absolute;
   top: 40px;
-  left: 49%;
+  right: 51%;
   display: block;
   z-index: 3002;
   height: 36px;
@@ -359,6 +359,15 @@ a.ticket-link:active .pulse {
 
 .ticket svg * {
   stroke: currentColor;
+}
+
+@media (max-width: 750px) {
+  .NITMlogo {
+    display: none;
+  }
+  .ticket {
+    right: 30px;
+  }
 }
 
 .pulse {
