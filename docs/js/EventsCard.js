@@ -78,6 +78,32 @@ function showDepartmental(data, cardId) {
     myhtml += data[i].image + '" alt=""></a><h5 class="px-4 pt-3 text-center">';
     myhtml +=
       data[i].name +
+      '</h5><p class="px-4 mb-3 ">Total prize:<small class="prize_money">Momento</small></p><p class="px-4 text-justify">';
+    myhtml +=
+      data[i].description.substring(0, 100) +
+      '...</p><p class="px-4 py-2">Event Duration: <small class="px-2 pt-3 h6">';
+    myhtml += data[i].duration + '</small></p><a href="';
+    myhtml +=
+      data[i].doc_link +
+      '"><div class="go-post pl-4 pt-2"><i class="fa fa-long-arrow-right"></i></div></a></div></div>';
+    row2.innerHTML += myhtml;
+  }
+}
+function showGaming(data, cardId) {
+  data = data.sort(function (a, b) {
+    var x = a.type.toLowerCase();
+    var y = b.type.toLowerCase();
+    return x < y ? 1 : x > y ? -1 : 0;
+  });
+  var row2 = document.querySelector("#departmentalEventCards");
+  for (let i = 0; i < data.length; i++) {
+    let myhtml =
+      '<div class="col-md-4 mt-4"><div class="blog-wrap pb-4"><a href="' +
+      data[i].doc_link +
+      `"><img src="${imgBaseUrl}`;
+    myhtml += data[i].image + '" alt=""></a><h5 class="px-4 pt-3 text-center">';
+    myhtml +=
+      data[i].name +
       '</h5><p class="px-4 mb-3 ">Total prize:<small class="prize_money"><i class="fa fa-rupee"></i> ';
     myhtml += data[i].total_prize + '</small></p><p class="px-4 text-justify">';
     myhtml +=
@@ -94,8 +120,8 @@ function showDepartmental(data, cardId) {
 fetch("https://cognitia2021.herokuapp.com/api/events/")
   .then((response) => response.json())
   .then((data) =>
-    showDepartmental(
-      data.filter((e) => e.type.substring(0, 12) === "Departmental"),
+    showGaming(
+      data.filter((e) => e.type === "Gaming"),
       "#departmentalEventCards"
     )
   );
@@ -104,7 +130,7 @@ fetch("https://cognitia2021.herokuapp.com/api/events/")
   .then((response) => response.json())
   .then((data) =>
     showDepartmental(
-      data.filter((e) => e.type === "Gaming"),
+      data.filter((e) => e.type.substring(0, 12) === "Departmental"),
       "#departmentalEventCards"
     )
   );
